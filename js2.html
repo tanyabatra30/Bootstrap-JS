@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorted Word</title>
+    <script>
+        const sortAlpha = () => {
+          event.preventDefault();
+          let str = document.getElementById("str").value;
+          str = str.split("").sort().join("");
+          const p = document.getElementById("sortStr")
+            ? document.getElementById("sortStr")
+            : document.createElement("p");
+          p.id = "sortStr";
+          p.innerText = str;
+          document
+            .getElementsByTagName("p")[0]
+            .insertAdjacentElement("afterend", p);
+        };
+      </script>
+    </head>
+    <body>
+      <form onSubmit="sortAlpha()">
+        <label for="str">Enter a word: </label>
+        <input type="text" id="str" /> <br />
+        <br />
+        <input type="submit" value="Submit" />
+      </form>
+      <p>Sorted word:</p>
+    </body>
+</html>
